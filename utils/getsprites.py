@@ -15,7 +15,7 @@ class SpriteSheet:
         self.sprite_height = sprite_height
         try:
             self.image = Image.open(self.image_path)
-            self.image.load()  # Ensure image is fully loaded
+            self.image.load()
             self.width, self.height = self.image.size
             self.cols = self.width // self.sprite_width
             self.rows = self.height // self.sprite_height
