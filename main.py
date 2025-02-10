@@ -2,7 +2,7 @@ from utils.getsprites import SpriteSheet
 
 # Get the sprite sheet images
 if __name__ == "__main__":
-    sprite_sheet_path = "path/to/your/sprite_sheet.png"
+    sprite_sheet_path = "assets/basictiles.png"
     sprite_sheet = SpriteSheet(sprite_sheet_path)
 
     if sprite_sheet.image:
