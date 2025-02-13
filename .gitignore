@@ -1,2 +1,4 @@
-assets/
+assets/sprites/
+assets/sprite_indices.csv
+assets/sprite_indices.txt
 utils/__pycache__
