@@ -7,7 +7,7 @@ The `gameloop()` function initializes a game grid and runs the main game loop, h
 """
 import pygame
 
-from game.grid import GameGrid
+from utils.grid import GameGrid
 from utils.getsprites import SpriteMaker
 
 def spritemaker():
