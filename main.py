@@ -1,21 +1,41 @@
-from utils.getsprites import SpriteSheet
+import pygame
+
+from game.grid import GameGrid
+from utils.getsprites import SpriteMaker
+
+def spritemaker():
+    sprite_sheets_path = "assets/"
+    sprite_maker = SpriteMaker(sprite_sheets_path)
+
+    sprite_maker.process_all_sheets()
+    print(f"Sprites extracted from {sprite_sheets_path} and saved")
+    sprite_maker.load_sprites()
+    print("Sprites indexed")
+    sprite_maker.save_sprite_indices()
+    print("Sprite indices saved")
+
+def gameloop():
+    # Initialize the game grid
+    pygame.init()
+    game_grid = GameGrid((800, 800), 10, 16) # Initialize game grid (800x800 window, 50x50 grid, 16x16 tiles)
+
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+        
+        # Clear the screen
+        game_grid.screen.fill((0, 0, 0))
+        # Draw the grid
+        game_grid.draw_grid()
+        # Update the display
+        pygame.display.flip
+
+    pygame.quit()
 
 # Get the sprite sheet images
 if __name__ == "__main__":
-    sprite_sheet_path = "assets/basictiles.png"
-    sprite_sheet = SpriteSheet(sprite_sheet_path)
+    # Create the sprites from the sprite sheets
+    spritemaker()
 
-    if sprite_sheet.image:
-        # Get a specific sprite (e.g., the 5th sprite)
-        sprite_index = 4
-        sprite = sprite_sheet.get_sprite(sprite_index)
-        if sprite:
-            sprite.save(f"sprite_{sprite_index}.png")
-            print(f"Sprite at index {sprite_index} saved as sprite_{sprite_index}.png")
-
-        # Get all sprites
-        all_sprites = sprite_sheet.get_all_sprites()
-        if all_sprites:
-            for i, sprite in enumerate(all_sprites):
-                sprite.save(f"all_sprite_{i}.png")
-            print(f"All {len(all_sprites)} sprites saved.")
