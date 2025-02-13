@@ -1,4 +1,15 @@
-import os
+"""
+The `GameGrid` class is responsible for managing the game grid, which is a 2D grid of tiles. It handles the initialization of the Pygame window, the creation of an empty grid, and the drawing of the grid on the screen.
+
+The class has the following attributes:
+- `window_size`: the size of the Pygame window
+- `grid_size`: the size of the game grid (both width and height)
+- `tile_size`: the size of each tile in the grid
+- `tiles`: a dictionary of tile sprites loaded from the "assets/" directory
+- `screen`: the Pygame window surface
+
+The `draw_grid()` method is responsible for rendering the game grid on the screen. It iterates over the grid and draws the corresponding tile sprite for each non-zero tile ID.
+"""
 import pygame
 
 from utils.getsprites import SpriteMaker

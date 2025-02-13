@@ -1,3 +1,8 @@
+"""
+Provides a SpriteMaker class to process sprite sheets and save individual sprites.
+
+The SpriteMaker class takes an input folder containing sprite sheet images, and an optional sprite width and height. It processes all sprite sheets in the input folder, extracts individual sprites, and saves them to an output folder. The class also provides methods to load the sprites and save the sprite indices to CSV and TXT files.
+"""
 import os
 import csv
 import pygame

@@ -1,3 +1,10 @@
+"""
+Generates and saves sprite images from sprite sheets.
+
+This module provides a `spritemaker()` function that processes all sprite sheets in the "assets/" directory, extracts the individual sprites, indexes them, and saves the sprite indices to a file.
+
+The `gameloop()` function initializes a game grid and runs the main game loop, handling events and drawing the grid.
+"""
 import pygame
 
 from game.grid import GameGrid
